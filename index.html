@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Segmentador + CRM Comercial Instagram</title>
+  <title>Giant Ideas Marketing · CRM Comercial</title>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./config.js"></script>
@@ -132,14 +132,290 @@
 
     @media(max-width:1100px){.hero,.config,.two-col{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.grid-4{grid-template-columns:repeat(2,1fr)}.controls,.controls.crm,.controls.report{grid-template-columns:1fr 1fr}.panel{padding:18px}.summary-box{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:640px){.grid,.grid-4,.controls,.controls.crm,.controls.report,.summary-box{grid-template-columns:1fr}h1{font-size:25px}.container{padding:14px 10px 30px}.modal-body,.modal-head{padding:14px}.table-actions{align-items:flex-start;flex-direction:column}}
+
+
+    /* =========================
+       Rediseño corporativo Giant Ideas Marketing
+       Mantiene IDs y lógica funcional intactos.
+       ========================= */
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#64748b;
+      --line:#e2e8f0;
+      --brand:#5b3df5;
+      --brand2:#7c3aed;
+      --soft:#eef2ff;
+      --shadow:0 18px 45px rgba(15,23,42,.08);
+      --radius:26px;
+      --ink:#0b1220;
+      --giant-dark:#111827;
+    }
+    body{
+      background:
+        radial-gradient(circle at 8% 0%, rgba(91,61,245,.14) 0, transparent 30%),
+        radial-gradient(circle at 92% 10%, rgba(124,58,237,.10) 0, transparent 28%),
+        linear-gradient(180deg,#f1f4ff 0%,#f7f8fc 38%,#ffffff 100%);
+      color:var(--text);
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0 0 auto 0;
+      height:5px;
+      background:linear-gradient(90deg,#5b3df5,#7c3aed,#0ea5e9);
+      z-index:100;
+    }
+    .container{
+      width:min(1380px, calc(100% - 96px));
+      max-width:none;
+      margin:0 auto;
+      padding:34px 0 64px;
+    }
+    .panel{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(226,232,240,.98);
+      box-shadow:var(--shadow);
+      border-radius:var(--radius);
+      padding:28px;
+    }
+    h1{font-size:42px;line-height:1.04;letter-spacing:-.045em;margin-bottom:14px;color:#0b1220;}
+    h2{font-size:20px;letter-spacing:-.02em;color:#0b1220;}
+    p{color:#64748b;line-height:1.65;}
+    .login-screen{
+      background:
+        radial-gradient(circle at 20% 15%, rgba(91,61,245,.18), transparent 28%),
+        linear-gradient(135deg,#f5f7ff,#ffffff);
+    }
+    .login-card{
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 24px 70px rgba(15,23,42,.12);
+    }
+    .login-card h1{font-size:30px;}
+    .badge{
+      background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+      color:#4f46e5;
+      border-color:#dbeafe;
+      padding:8px 13px;
+      font-weight:900;
+    }
+    .brand-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#0f172a;
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.01em;
+      box-shadow:0 10px 24px rgba(15,23,42,.16);
+    }
+    .userbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      margin-bottom:22px;
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(226,232,240,.98);
+      border-radius:24px;
+      padding:18px 20px;
+      box-shadow:0 12px 34px rgba(15,23,42,.07);
+    }
+    .userbar-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand-mark{
+      width:46px;
+      height:46px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-size:22px;
+      background:linear-gradient(135deg,#5b3df5,#7c3aed);
+      box-shadow:0 14px 28px rgba(91,61,245,.24);
+      flex:0 0 auto;
+    }
+    .userbar strong{font-size:15px;color:#0f172a;}
+    .userbar span{font-size:12.5px;color:#64748b;}
+    .sync-ok,.sync-warn,.sync-bad{font-weight:900;}
+    .hero{
+      display:grid;
+      grid-template-columns:minmax(0,1.35fr) minmax(360px,.65fr);
+      gap:22px;
+      align-items:stretch;
+      margin-bottom:24px;
+    }
+    .hero:has(.upload.hidden-by-role){
+      grid-template-columns:1fr;
+    }
+    .hero:has(.upload.hidden-by-role) .hero-copy{
+      max-width:940px;
+    }
+    .hero-copy{
+      position:relative;
+      overflow:hidden;
+      min-height:230px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .hero-copy::after{
+      content:"🐘";
+      position:absolute;
+      right:34px;
+      bottom:18px;
+      font-size:92px;
+      line-height:1;
+      opacity:.07;
+      transform:rotate(-8deg);
+      pointer-events:none;
+    }
+    .hero-copy p{font-size:16px;max-width:900px;}
+    .chips{gap:8px;margin-top:18px;}
+    .chip{
+      border-color:#e2e8f0;
+      background:#fff;
+      color:#334155;
+      border-radius:999px;
+      padding:8px 12px;
+      box-shadow:0 4px 12px rgba(15,23,42,.03);
+    }
+    .upload{
+      border:1.5px dashed #c4b5fd;
+      background:linear-gradient(180deg,#fbfbff,#ffffff);
+      border-radius:26px;
+      padding:28px;
+    }
+    button,.btn{
+      border-radius:15px;
+      padding:11px 15px;
+      background:linear-gradient(135deg,#5b3df5,#7c3aed);
+      box-shadow:0 10px 22px rgba(91,61,245,.22);
+      transition:transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    }
+    button:hover,.btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(91,61,245,.26);}
+    button.secondary,.btn.secondary{background:#0f172a;color:#fff;box-shadow:0 10px 24px rgba(15,23,42,.16);}
+    button.ghost,.btn.ghost{background:#fff;color:#334155;border:1px solid #e2e8f0;box-shadow:0 7px 18px rgba(15,23,42,.04);}
+    button.small{padding:8px 12px;border-radius:13px;}
+    .notice,.advisor-lock{
+      border-radius:20px;
+      padding:16px 18px;
+      margin:18px 0 24px;
+      line-height:1.55;
+    }
+    .notice{background:#fff7ed;border-color:#fed7aa;color:#9a3412;}
+    .advisor-lock{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8;}
+    .tabs{
+      gap:10px;
+      margin:0 0 24px;
+      padding:6px;
+      border-radius:20px;
+      width:max-content;
+      max-width:100%;
+      background:rgba(255,255,255,.75);
+      border:1px solid #e2e8f0;
+      box-shadow:0 8px 20px rgba(15,23,42,.04);
+    }
+    .tab{
+      background:transparent;
+      color:#334155;
+      border:0;
+      box-shadow:none;
+      padding:12px 16px;
+      border-radius:15px;
+    }
+    .tab.active{
+      background:linear-gradient(135deg,#5b3df5,#7c3aed);
+      color:#fff;
+      box-shadow:0 10px 24px rgba(91,61,245,.26);
+    }
+    .grid,.grid-4{gap:14px;margin:18px 0 24px;}
+    .card{
+      border-color:#e2e8f0;
+      border-radius:23px;
+      padding:20px;
+      box-shadow:0 10px 26px rgba(15,23,42,.045);
+    }
+    .kpi-label{font-size:11.5px;color:#64748b;font-weight:900;letter-spacing:.065em;}
+    .kpi-value{font-size:34px;color:#0f172a;margin-top:7px;}
+    .kpi-note{font-size:13px;color:#64748b;margin-top:4px;}
+    .controls{gap:12px;margin-bottom:14px;}
+    .controls.report{
+      grid-template-columns:repeat(4,minmax(180px,1fr)) auto;
+      gap:16px;
+      align-items:end;
+    }
+    input,select,textarea{
+      border-color:#dbe3ef;
+      border-radius:15px;
+      padding:12px 13px;
+      background:#fff;
+      color:#0f172a;
+    }
+    input:focus,select:focus,textarea:focus{border-color:#a78bfa;box-shadow:0 0 0 4px rgba(124,58,237,.10);}
+    .table-wrap{
+      border-color:#e2e8f0;
+      border-radius:24px;
+      box-shadow:0 14px 36px rgba(15,23,42,.07);
+      margin-top:18px;
+    }
+    .table-actions{
+      padding:18px 20px;
+      background:linear-gradient(180deg,#fbfbff,#ffffff);
+    }
+    th{background:#f8fafc;color:#334155;}
+    td{color:#263244;}
+    tr:hover td{background:#fbfcff;}
+    .modal{border-radius:30px;}
+    .footer-note{
+      max-width:1050px;
+      margin:28px auto 0;
+      text-align:center;
+      color:#64748b;
+    }
+    .footer-brand{
+      text-align:center;
+      margin:18px 0 0;
+      color:#64748b;
+      font-size:13px;
+    }
+    .footer-brand strong{color:#4f46e5;}
+
+    @media(max-width:1100px){
+      .container{width:min(100% - 42px, 980px);padding-top:24px;}
+      .hero,.hero:has(.upload.hidden-by-role){grid-template-columns:1fr;}
+      .controls.report{grid-template-columns:repeat(2,1fr);}
+      h1{font-size:34px;}
+      .userbar{align-items:flex-start;flex-direction:column;}
+    }
+    @media(max-width:640px){
+      .container{width:calc(100% - 24px);padding:18px 0 42px;}
+      .panel{padding:20px;border-radius:22px;}
+      h1{font-size:28px;}
+      .hero-copy::after{font-size:64px;right:18px;bottom:12px;}
+      .controls.report{grid-template-columns:1fr;}
+      .tabs{width:100%;}
+      .tab{flex:1;justify-content:center;}
+      .brand-mark{width:42px;height:42px;}
+    }
+
   </style>
 </head>
 <body>
   <div id="loginScreen" class="login-screen">
     <div class="login-card">
       <div class="badge">🔐 Acceso comercial</div>
-      <h1>Segmentador + CRM comercial</h1>
-      <p>Ingresa con el usuario autorizado. Los administradores cargan base y configuración; los asesores solo gestionan prospectos.</p>
+      <h1>Giant Ideas CRM</h1>
+      <p>Ingresa con el usuario autorizado. Los administradores cargan base y configuración; los asesores gestionan prospectos y seguimiento comercial.</p>
       <div class="field">
         <label class="lbl">Correo</label>
         <input id="loginEmail" type="email" placeholder="asesor@empresa.com" autocomplete="email" />
@@ -157,10 +433,14 @@
 
   <div id="appShell" class="container app-hidden">
     <div class="userbar">
-      <div>
-        <strong id="userName">Usuario</strong>
-        <span id="userRole">Rol</span>
-        <span id="cloudStatus" class="sync-warn">Conectando con Supabase...</span>
+      <div class="userbar-left">
+        <div class="brand-mark">🐘</div>
+        <div>
+          <div class="brand-badge">Giant Ideas Marketing</div>
+          <strong id="userName">Usuario</strong>
+          <span id="userRole">Rol</span>
+          <span id="cloudStatus" class="sync-warn">Conectando con Supabase...</span>
+        </div>
       </div>
       <div class="btn-row">
         <button id="refreshCloudBtn" class="ghost small">🔄 Actualizar</button>
@@ -168,17 +448,16 @@
       </div>
     </div>
     <section class="hero">
-    <div class="panel">
-  <div class="badge">📊 CRM comercial</div>
-  <h1>Gestiona prospectos y mide resultados comerciales</h1>
-  <p>Consulta la base asignada, registra la gestión realizada y actualiza el estado comercial de cada prospecto: fecha, asesor, mensaje enviado, contactabilidad, tipificación, cotización, venta y seguimiento.</p>
-  <div class="chips">
-    <span class="chip">Score 0–100</span>
-    <span class="chip">Gestión por asesor</span>
-    <span class="chip">Reporte diario</span>
-    <span class="chip">Seguimiento comercial</span>
-  </div>
-</div>
+      <div class="panel hero-copy">
+        <div class="badge">📊 CRM comercial</div>
+        <h1>Gestiona prospectos y mide resultados comerciales</h1>
+        <p>Consulta la base asignada, registra la gestión realizada y actualiza el estado comercial de cada prospecto: fecha, asesor, mensaje enviado, contactabilidad, tipificación, cotización, venta y seguimiento.</p>
+        <div class="chips">
+          <span class="chip">Score 0–100</span>
+          <span class="chip">Gestión por asesor</span>
+          <span class="chip">Reporte diario</span>
+          <span class="chip">Seguimiento comercial</span>
+        </div>
       </div>
       <div class="panel upload admin-only">
         <h2>Cargar base</h2>
@@ -270,9 +549,9 @@
           <input id="crmTo" type="date" />
         </div>
         <div class="btn-row admin-only">
-  <button id="exportGestionBtn" class="secondary" disabled>⬇️ Exportar gestiones</button>
-  <button id="exportSegmentBtn" class="ghost" disabled>⬇️ Exportar segmentación</button>
-</div>
+          <button id="exportGestionBtn" class="secondary" disabled>⬇️ Exportar gestiones</button>
+          <button id="exportSegmentBtn" class="ghost" disabled>⬇️ Exportar segmentación</button>
+        </div>
         <div class="hint">Tipifica cada perfil desde el botón “Gestionar”. La tabla muestra la última gestión registrada y conserva el historial completo.</div>
       </section>
 
@@ -378,6 +657,7 @@
     </section>
 
     <p class="footer-note"><strong>Nota:</strong> esta herramienta genera priorización y seguimiento comercial con base en la información disponible en el archivo. La etiqueta “posible trabajador/competidor” debe validarse manualmente; no debe usarse como afirmación definitiva sobre una persona.</p>
+    <div class="footer-brand">Plataforma comercial desarrollada por <strong>Giant Ideas Marketing</strong> 🐘</div>
   </div>
 
   <div id="gestionModal" class="modal-backdrop">
